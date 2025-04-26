@@ -48,3 +48,6 @@ def locate_by_tagname_demo():
     driver.find_element(By.TAG_NAME,"button").click()
     time.sleep(10)
 locate_by_tagname_demo()
+
+# Close the browser
+driver.quit()   

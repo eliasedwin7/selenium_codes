@@ -18,3 +18,6 @@ def locate_by_tagname_demo():
     print(f"Type: {type(divs)} , length : {len(divs)}")
     print(f"example : {divs[0].text}")
 locate_by_tagname_demo()
+
+# Close the browser
+driver.quit()
