@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 import pytest
 from pages.yatra_launch_page import LaunchPage
-from base.base_driver import BaseDriver
+from utilities.utils import Utils
 
 @pytest.mark.usefixtures("setup")
 class TestsearchandVerfiy():
@@ -25,8 +25,8 @@ class TestsearchandVerfiy():
         lp=LaunchPage(self.driver,self.wait)
         lp.search_arival_location('COK')
         results = self.driver.find_elements(By.XPATH, "//div[@class='MuiBox-root css-134xwrj']//li[@class='css-1546kn3']")
-
-        print("Suggestions:")
+        ut=Utils()
+        ut.assertListItmesTxt(results,'Indira Gandhi International')
         for result in results:
             print(result.text)
 
