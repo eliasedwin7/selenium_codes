@@ -5,6 +5,7 @@ from utilities.utils import Utils
 
 @pytest.mark.usefixtures("setup")
 class TestsearchandVerfiy():
+    log=Utils.cust_logger()
     def test_get_departure_suggestions(self):
         lp=LaunchPage(self.driver,self.wait)
         lp.search_depart_location('AUS')
@@ -15,7 +16,7 @@ class TestsearchandVerfiy():
         #lp.page_scroll
         #sf= SearchFlighResults(self.driver,self.wait)
         #sf.filter_flights()
-        print("Suggestions:")
+        self.log.info("Suggestions:")
         for result in results:
             print(result.text)
 
